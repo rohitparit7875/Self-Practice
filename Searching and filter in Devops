@@ -1,0 +1,4 @@
+grep "error" file
+find / -name file.txt
+awk '{print $1}' file
+sed 's/old/new/g' file
