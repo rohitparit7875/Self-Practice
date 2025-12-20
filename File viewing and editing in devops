@@ -1,0 +1,6 @@
+cat file
+less file
+head -n 10 file
+tail -f logfile
+vi file
+nano file
