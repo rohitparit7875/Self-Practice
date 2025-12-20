@@ -1,0 +1,6 @@
+top
+htop
+free -m
+df -h
+du -sh *
+uptime
