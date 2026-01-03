@@ -1,0 +1,96 @@
+Mini Task Manager (CRUD + SQLite + Flask)
+📌 What this app does
+Create / Read / Delete tasks
+Uses SQLite database (real backend feeling)
+Exposes REST API
+Easy to extend to:
+Authentication
+Security scanning
+Kubernetes
+📁 Project Structure
+Copy code
+
+task-manager/
+│── app.py
+│── database.db
+│── requirements.txt
+│── Dockerfile
+🧠 app.py
+Copy code
+Python
+from flask import Flask, request, jsonify
+import sqlite3
+
+app = Flask(__name__)
+DB = "database.db"
+
+def get_db():
+    return sqlite3.connect(DB)
+
+@app.route("/tasks", methods=["GET", "POST"])
+def tasks():
+    conn = get_db()
+    cursor = conn.cursor()
+
+    if request.method == "POST":
+        task = request.json.get("task")
+        cursor.execute("INSERT INTO tasks (name) VALUES (?)", (task,))
+        conn.commit()
+        return {"message": "Task added"}, 201
+
+    cursor.execute("SELECT * FROM tasks")
+    tasks = [{"id": row[0], "task": row[1]} for row in cursor.fetchall()]
+    return jsonify(tasks)
+
+@app.route("/tasks/<int:id>", methods=["DELETE"])
+def delete_task(id):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM tasks WHERE id=?", (id,))
+    conn.commit()
+    return {"message": "Task deleted"}
+
+def init_db():
+    conn = get_db()
+    conn.execute("CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, name TEXT)")
+    conn.close()
+
+if __name__ == "__main__":
+    init_db()
+    app.run(host="0.0.0.0", port=5000)
+📦 requirements.txt
+Copy code
+
+flask
+🐳 Dockerfile
+Copy code
+Dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+CMD ["python", "app.py"]
+▶️ Build & Run
+Copy code
+Bash
+docker build -t task-manager .
+docker run -p 5000:5000 task-manager
+🧪 Test API
+Copy code
+Bash
+# Add task
+curl -X POST http://localhost:5000/tasks \
+-H "Content-Type: application/json" \
+-d '{"task":"Learn Docker"}'
+
+# View tasks
+curl http://localhost:5000/tasks
+
+# Delete task
+curl -X DELETE http://localhost:5000/tasks/1
