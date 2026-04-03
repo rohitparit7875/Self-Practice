@@ -1,0 +1,15 @@
+🔵 BIT 2: Scripting + Automation
+👉 Goal: Reduce manual work (core SRE mindset)
+🔹 Topics:
+Shell Scripting (Bash)
+Basic Python scripting
+Cron jobs & task scheduling
+Automating repetitive tasks
+🔹 Example Skills:
+Write script to monitor disk usage
+Auto-restart a service if it crashes
+Log cleanup automation
+🔹 Tools:
+Bash
+Python
+Git (version control)
