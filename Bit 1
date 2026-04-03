@@ -1,0 +1,16 @@
+🟢 BIT 1: Foundations (System + Linux + Networking)
+👉 Goal: Understand how systems actually work
+🔹 Topics to Cover:
+Linux Basics
+File system, permissions, processes
+Commands: top, ps, grep, netstat, df, du
+Networking Fundamentals
+OSI Model, TCP/IP
+DNS, HTTP/HTTPS, Load Balancing
+System Concepts
+CPU, Memory, Disk I/O
+Logs & basic troubleshooting
+🔹 What You Should Be Able To Do:
+Debug a slow system
+Check logs and identify issues
+Understand how a request travels from browser → server
