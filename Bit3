@@ -1,0 +1,18 @@
+BIT 3: Monitoring + Observability
+👉 Goal: Know what's happening inside systems (very important for SRE)
+🔹 Topics:
+Monitoring vs Logging vs Tracing
+Metrics (CPU, memory, latency)
+Alerts & thresholds
+🔹 Tools:
+Prometheus
+Grafana
+ELK Stack
+🔹 Key Concepts:
+SLI (Service Level Indicator)
+SLO (Service Level Objective)
+SLA (Service Level Agreement)
+🔹 What You Should Do:
+Create dashboards
+Set alerts for CPU spikes
+Analyze logs during failures
