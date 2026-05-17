@@ -1,0 +1,17 @@
+1. Git & GitHub Basics
+What is Git?
+Git is a distributed version control system used to track code changes.
+What is GitHub?
+GitHub is a cloud platform used to store and manage Git repositories.
+Difference between Git and GitHub?
+Git → Version control tool
+GitHub → Cloud hosting platform for Git repositories
+What is a repository?
+A repository is a storage location where project files and code history are maintained.
+What is a commit?
+A commit is a saved snapshot of code changes.
+What is clone?
+Clone copies a remote repository to the local machine.
+Command:
+Bash
+git clone <repo-url>
