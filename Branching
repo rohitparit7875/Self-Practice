@@ -1,0 +1,16 @@
+3. Branching & Collaboration
+What is branching?
+Branching allows developers to work independently without affecting main code.
+Bash
+git branch feature1
+git checkout feature1
+What is merge conflict?
+Occurs when two users modify the same file and Git cannot merge automatically.
+What is Pull Request (PR)?
+A pull request is used to request code review before merging changes.
+Difference between Fork and Clone?
+Fork → Copy repo to own GitHub account
+Clone → Copy repo to local system
+Merge vs Rebase
+Merge preserves history
+Rebase creates clean linear history
