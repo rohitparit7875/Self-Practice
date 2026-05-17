@@ -1,0 +1,6 @@
+How do multiple developers work on same project?
+Answer:
+Create separate branches
+Push changes
+Create pull requests
+Review and merge code
