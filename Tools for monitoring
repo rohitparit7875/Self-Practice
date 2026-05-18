@@ -1,0 +1,6 @@
+What tools are used for monitoring?
+Answer:
+Prometheus for metrics collection.
+Grafana for dashboards.
+ELK Stack for log analysis.
+Alerts help incident response teams
